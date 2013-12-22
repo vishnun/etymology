@@ -13,9 +13,9 @@
         <thead>
         <tr>
           <th>Word</th>
-          <th>Meaning</th>
+          <th class="hidden-xs">Meaning</th>
           <th>Root word</th>
-          <th>Usages</th>
+          <th class="hidden-xs">Usages</th>
         </tr>
         </thead>
 
@@ -23,12 +23,12 @@
         <% @non_rootwords.each do |non_rootword| %>
             <tr id="<%= non_rootword.word %>">
               <td>
-                <button class="btn btn-link btn-unstyled" data-target-modal="non-rootword-modal" data-target='#non-rootword-modal' data-toggle="modal">
+                <button class="btn btn-link btn-block btn-unstyled" data-target-modal="non-rootword-modal" data-target='#non-rootword-modal' data-toggle="modal">
                   <div class="hidden non-rootword-data" data-non-rootword="<%= non_rootword.to_json %>"></div>
                   <%= non_rootword.word %>
                 </button>
               </td>
-              <td>
+              <td class="hidden-xs">
                 <% meanings = '' %>
                 <%- non_rootword.meaning.each do |meaning| %>
                     <% meanings = meanings + ', ' + meaning %>
@@ -36,12 +36,12 @@
                 <%= meanings.from(1) %>
               </td>
               <td>
-                <button class="btn btn-link btn-unstyled" data-target-modal="rootword-modal" data-target='#rootword-modal' data-toggle="modal">
+                <button class="btn btn-link btn-block btn-unstyled" data-target-modal="rootword-modal" data-target='#rootword-modal' data-toggle="modal">
                   <div class="hidden rootword-data" data-rootword="<%= non_rootword.rootword.to_json %>"></div>
                   <%= non_rootword.rootword.word %>
                 </button>
               </td>
-              <td>
+              <td class="hidden-xs">
                 <% usages = '' %>
                 <%- non_rootword.usages.each do |usage| %>
                     <% usages = usages + ', ' + usage %>

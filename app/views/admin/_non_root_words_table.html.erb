@@ -3,9 +3,9 @@
     <thead>
     <tr>
       <th>Word</th>
-      <th>Meaning</th>
+      <th class="hidden-xs">Meaning</th>
       <th>Root word</th>
-      <th>Usages</th>
+      <th class="hidden-xs">Usages</th>
     </tr>
     </thead>
 
@@ -13,7 +13,7 @@
     <% @non_rootwords.each do |non_rootword| %>
         <tr>
           <td><%= non_rootword.word %></td>
-          <td>
+          <td class="hidden-xs">
             <% meanings = '' %>
             <%- non_rootword.meaning.each do |meaning| %>
                 <% meanings = meanings + ', ' +  meaning %>
@@ -21,7 +21,7 @@
             <%= meanings.from(1) %>
           </td>
           <td><%= non_rootword.rootword.word %></td>
-          <td>
+          <td class="hidden-xs">
             <% usages = '' %>
             <%- non_rootword.usages.each do |usage| %>
                 <% usages = usages + ', ' +  usage %>

@@ -3,6 +3,7 @@ class AdminController < ApplicationController
 
   def index
     @rootwords = Rootword.all
+    @non_rootwords = NonRootword.all
   end
 
 end

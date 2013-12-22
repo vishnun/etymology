@@ -9,6 +9,7 @@ Etymology::Application.routes.draw do
   get '/admin' => 'admin#index'
 
   resources :rootwords
+  resources :non_rootwords
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

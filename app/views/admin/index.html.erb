@@ -30,3 +30,52 @@
     </div>
   </div>
 </div>
+
+<div class="space-bar"></div>
+<hr/>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <%= render partial: 'new_non_root_word_form' %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <table class="table table-striped table-bordered">
+        <thead>
+        <tr>
+          <th>Word</th>
+          <th>Meaning</th>
+          <th>Root word</th>
+          <th>Usages</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <% @non_rootwords.each do |non_rootword| %>
+            <tr>
+              <td><%= non_rootword.word %></td>
+              <td>
+                <% meanings = '' %>
+                <%- non_rootword.meaning.each do |meaning| %>
+                    <% meanings = meanings + ', ' +  meaning %>
+                <% end %>
+                <%= meanings.from(1) %>
+              </td>
+              <td><%= non_rootword.rootword.word %></td>
+              <td>
+                <% usages = '' %>
+                <%- non_rootword.usages.each do |usage| %>
+                    <% usages = usages + ', ' +  usage %>
+                <% end %>
+                <%= usages.from(1) %>
+              </td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

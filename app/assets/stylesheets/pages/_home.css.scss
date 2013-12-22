@@ -1,0 +1,15 @@
+#rootword-modal {
+  text-transform: capitalize;
+  h1,h2,h3,h4 {
+    margin: 0;
+    height: 50px;
+    line-height: 50px;
+  }
+  label {
+    line-height: 50px;
+  }
+  .usages-list {
+    margin: 0;
+    line-height: 50px;
+  }
+}

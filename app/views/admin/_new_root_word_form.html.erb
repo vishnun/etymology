@@ -3,25 +3,25 @@
   <%= form_tag rootwords_path, role: 'form', class: 'form-inline', id: 'root_word' do %>
 
       <div class="form-group col-sm-3">
-        <label class="text-right col-sm-2">Word</label>
+        <label class="text-right col-sm-3 visible-lg visible-md">Word</label>
 
-        <div class="col-sm-10">
+        <div class="col-sm-9">
           <%= text_field :root_word, :word, placeholder: 'root word', title: 'root word', required: true, class: "form-control" %>
         </div>
       </div>
 
       <div class="form-group col-sm-3">
-        <label class="pull-left text-right col-sm-3">Meaning</label>
+        <label class="pull-left text-right col-sm-4 visible-lg visible-md">Meaning</label>
 
-        <div class="col-sm-9">
+        <div class="col-sm-8">
           <%= text_field :root_word, :meaning, placeholder: 'meaning', title: 'meaning', required: true, class: "form-control" %>
         </div>
       </div>
 
       <div class="form-group col-sm-4">
-        <label class="pull-left text-right col-sm-2">Usage</label>
+        <label class="pull-left text-right col-sm-3 visible-lg visible-md">Usage</label>
 
-        <div class="col-sm-10">
+        <div class="col-sm-9">
           <%= text_field :root_word, :usages, placeholder: 'usages', title: 'usages', required: true, class: "form-control" %>
         </div>
       </div>

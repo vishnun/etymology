@@ -1,3 +1,98 @@
-<h3>
-  Welcome to Etymology-Lab
-</h3>
+<div class="container">
+  <div class="space-bar"></div>
+  <div class="page-header">
+    <h1>Welcome to Etymology-Lab
+      <small>Improve your vocabulary</small>
+    </h1>
+  </div>
+
+
+  <div class="row">
+    <div class="col-sm-12 medium-table-container">
+      <table class="table table-striped table-bordered">
+        <thead>
+        <tr>
+          <th>Word</th>
+          <th>Meaning</th>
+          <th>Root word</th>
+          <th>Usages</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <% @non_rootwords.each do |non_rootword| %>
+            <tr>
+              <td><%= non_rootword.word %></td>
+              <td>
+                <% meanings = '' %>
+                <%- non_rootword.meaning.each do |meaning| %>
+                    <% meanings = meanings + ', ' + meaning %>
+                <% end %>
+                <%= meanings.from(1) %>
+              </td>
+              <td>
+                <button class="btn btn-link btn-unstyled" data-target-modal="rootword-modal" data-target='#rootword-modal' data-toggle="modal">
+                  <div class="hidden rootword-data" data-rootword="<%= non_rootword.rootword.to_json %>"></div>
+                  <%= non_rootword.rootword.word %>
+                </button>
+              </td>
+              <td>
+                <% usages = '' %>
+                <%- non_rootword.usages.each do |usage| %>
+                    <% usages = usages + ', ' + usage %>
+                <% end %>
+                <%= usages.from(1) %>
+              </td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="rootword-modal" tabindex="-1" role="dialog" aria-labelledby="RootWord" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Root Word</h4>
+      </div>
+      <div class="modal-body">
+
+
+        <div class="row ">
+          <label class="col-sm-4 text-right">Word:</label>
+
+          <div class="col-sm-5 col-sm-offset-1">
+            <h1 data-rootword="word"></h1>
+          </div>
+        </div>
+
+        <div class="row ">
+          <label class="col-sm-4 text-right">Meaning:</label>
+
+          <div class="col-sm-5 col-sm-offset-1">
+            <h2 data-rootword="meaning"></h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <label class="col-sm-4 text-right">Usages:</label>
+
+          <div class="col-sm-5 col-sm-offset-1">
+            <ul class="list-unstyled usages-list" data-rootword="usages">
+            </ul>
+          </div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div><!-- /.modal -->

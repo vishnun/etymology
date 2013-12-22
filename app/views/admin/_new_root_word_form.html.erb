@@ -1,20 +1,23 @@
-<%= form_tag rootwords_path, role: 'form', class: 'form-inline', id: 'root_word' do %>
+<div class="text-center">
+  <%= form_tag rootwords_path, role: 'form', class: 'form-inline', id: 'root_word' do %>
 
-    <div class="form-group">
-      <label class="sr-only text-right">Word</label>
-      <%= text_field :root_word, :word, placeholder: 'root word', title: 'root word', required: true, class: "form-control" %>
-    </div>
+      <div class="form-group">
+        <label class="sr-only text-right">Word</label>
+        <%= text_field :root_word, :word, placeholder: 'root word', title: 'root word', required: true, class: "form-control" %>
+      </div>
 
-    <div class="form-group">
-      <label class="sr-only text-right">Meaning</label>
-      <%= text_field :root_word, :meaning, placeholder: 'meaning', title: 'meaning', required: true, class: "form-control" %>
-    </div>
+      <div class="form-group">
+        <label class="sr-only text-right">Meaning</label>
+        <%= text_field :root_word, :meaning, placeholder: 'meaning', title: 'meaning', required: true, class: "form-control" %>
+      </div>
 
-    <div class="form-group">
-      <label class="sr-only text-right">Usage</label>
-      <%= text_field :root_word, :usages, placeholder: 'usages', title: 'usages', required: true, class: "form-control" %>
-    </div>
-    
-    <button type="submit" class="btn btn-primary">Add</button>
-<% end %>
+      <div class="form-group">
+        <label class="sr-only text-right">Usage</label>
+        <%= text_field :root_word, :usages, placeholder: 'usages', title: 'usages', required: true, class: "form-control" %>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Add</button>
+  <% end %>
+</div>
+
 <div class="space-bar"></div>

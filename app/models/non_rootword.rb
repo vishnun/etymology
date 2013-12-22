@@ -1,6 +1,7 @@
-class Rootword < ActiveRecord::Base
-    has_many :non_rootwords
+class NonRootword < ActiveRecord::Base
+    belongs_to :rootword
 
+    serialize :meaning
     serialize :usages
 
     validates :word, presence: true

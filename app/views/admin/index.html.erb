@@ -1,81 +1,45 @@
-<div class="space-bar"></div>
 <div class="container">
-  <div class="row">
-    <div class="col-sm-12">
-      <%= render partial: 'new_root_word_form' %>
-    </div>
+  <div class="space-bar"></div>
+  <div class="page-header">
+    <h1>Admin dashboard
+      <small>Add root and other words</small>
+    </h1>
   </div>
 
-  <div class="row">
-    <div class="col-sm-12 medium-table-container">
-      <table class="table table-striped table-bordered">
-        <thead>
-        <tr>
-          <th>Root Word</th>
-          <th>Meaning</th>
-          <th>Usages</th>
-        </tr>
-        </thead>
 
-        <tbody>
-        <% @rootwords.each do |rootword| %>
-            <tr>
-              <td><%= rootword.word %></td>
-              <td><%= rootword.meaning %></td>
-              <td><%= rootword.usages %></td>
-            </tr>
-        <% end %>
-        </tbody>
-      </table>
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#root_words" data-toggle="tab">Root Words</a></li>
+    <li><a href="#non_root_words" data-toggle="tab">Non Root Words</a></li>
+  </ul>
+
+
+  <div class="tab-content">
+    <div class="tab-pane active" id="root_words">
+      <div class="space-bar"></div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <%= render partial: 'new_root_word_form' %>
+        </div>
+      </div>
+
+      <div class="row">
+        <%= render partial: 'root_words_table' %>
+      </div>
+
     </div>
-  </div>
-</div>
 
-<div class="space-bar"></div>
-<hr/>
+    <div class="tab-pane" id="non_root_words">
+      <div class="space-bar"></div>
+      <div class="row">
+        <div class="col-sm-12">
+          <%= render partial: 'new_non_root_word_form' %>
+        </div>
+      </div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12">
-      <%= render partial: 'new_non_root_word_form' %>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-sm-12 medium-table-container">
-      <table class="table table-striped table-bordered">
-        <thead>
-        <tr>
-          <th>Word</th>
-          <th>Meaning</th>
-          <th>Root word</th>
-          <th>Usages</th>
-        </tr>
-        </thead>
-
-        <tbody>
-        <% @non_rootwords.each do |non_rootword| %>
-            <tr>
-              <td><%= non_rootword.word %></td>
-              <td>
-                <% meanings = '' %>
-                <%- non_rootword.meaning.each do |meaning| %>
-                    <% meanings = meanings + ', ' +  meaning %>
-                <% end %>
-                <%= meanings.from(1) %>
-              </td>
-              <td><%= non_rootword.rootword.word %></td>
-              <td>
-                <% usages = '' %>
-                <%- non_rootword.usages.each do |usage| %>
-                    <% usages = usages + ', ' +  usage %>
-                <% end %>
-                <%= usages.from(1) %>
-              </td>
-            </tr>
-        <% end %>
-        </tbody>
-      </table>
+      <div class="row">
+        <%= render partial: 'non_root_words_table' %>
+      </div>
     </div>
   </div>
 </div>

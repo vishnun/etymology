@@ -1,5 +1,7 @@
 require 'spec_helper'
 
 describe Rootword do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context 'serialization' do
+    it { should serialize :usages }
+  end
 end

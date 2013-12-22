@@ -7,6 +7,8 @@ Etymology::Application.routes.draw do
   root :to => "home#index"
 
   get '/admin' => 'admin#index'
+
+  resources :rootwords
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

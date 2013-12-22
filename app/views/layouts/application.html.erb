@@ -2,16 +2,24 @@
 <html>
 <head>
   <title>Etymology</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <%= csrf_meta_tags %>
+
+  <%= render partial: 'shared/stylesheets' %>
+  <%= render partial: 'shared/header_scripts' %>
 </head>
-<body>
+<body class="etymology">
 
-<%= yield %>
+    <div class="app-container">
+      <%= yield %>
+    </div>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <%= render partial: 'shared/footer_scripts' %>
 
 </body>
 </html>

@@ -21,8 +21,13 @@
 
         <tbody>
         <% @non_rootwords.each do |non_rootword| %>
-            <tr>
-              <td><%= non_rootword.word %></td>
+            <tr id="<%= non_rootword.word %>">
+              <td>
+                <button class="btn btn-link btn-unstyled" data-target-modal="non-rootword-modal" data-target='#non-rootword-modal' data-toggle="modal">
+                  <div class="hidden non-rootword-data" data-non-rootword="<%= non_rootword.to_json %>"></div>
+                  <%= non_rootword.word %>
+                </button>
+              </td>
               <td>
                 <% meanings = '' %>
                 <%- non_rootword.meaning.each do |meaning| %>
@@ -51,48 +56,5 @@
   </div>
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="rootword-modal" tabindex="-1" role="dialog" aria-labelledby="RootWord" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Root Word</h4>
-      </div>
-      <div class="modal-body">
-
-
-        <div class="row ">
-          <label class="col-sm-4 text-right">Word:</label>
-
-          <div class="col-sm-5 col-sm-offset-1">
-            <h1 data-rootword="word"></h1>
-          </div>
-        </div>
-
-        <div class="row ">
-          <label class="col-sm-4 text-right">Meaning:</label>
-
-          <div class="col-sm-5 col-sm-offset-1">
-            <h2 data-rootword="meaning"></h2>
-          </div>
-        </div>
-
-        <div class="row">
-          <label class="col-sm-4 text-right">Usages:</label>
-
-          <div class="col-sm-5 col-sm-offset-1">
-            <ul class="list-unstyled usages-list" data-rootword="usages">
-            </ul>
-          </div>
-        </div>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-    <!-- /.modal-content -->
-  </div>
-  <!-- /.modal-dialog -->
-</div><!-- /.modal -->
+<%= render partial: 'shared/non_rootword_modal' %>
+<%= render partial: 'shared/rootword_modal' %>

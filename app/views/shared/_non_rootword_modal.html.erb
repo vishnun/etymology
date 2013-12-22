@@ -1,0 +1,56 @@
+<div class="modal fade" id="non-rootword-modal" tabindex="-1" role="dialog" aria-labelledby="NonRootWord" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="NonRootWordLabel">Word</h4>
+      </div>
+      <div class="modal-body">
+
+
+        <div class="row ">
+          <label class="col-sm-4 text-right">Word:</label>
+
+          <div class="col-sm-5 col-sm-offset-1">
+            <p data-non-rootword="word"></p>
+          </div>
+        </div>
+
+        <div class="row ">
+          <label class="col-sm-4 text-right">Meaning:</label>
+
+          <div class="col-sm-5 col-sm-offset-1">
+            <p data-non-rootword="meaning"></p>
+          </div>
+        </div>
+
+        <div class="row">
+          <label class="col-sm-4 text-right">Usages:</label>
+
+          <div class="col-sm-5 col-sm-offset-1">
+            <ul class="list-unstyled usages-list" data-non-rootword="usages">
+            </ul>
+          </div>
+        </div>
+
+        <div class="row">
+          <label class="col-sm-4 text-right">Root Word:</label>
+          <div class="col-sm-5 col-sm-offset-1">
+            <button class="btn btn-link btn-lg btn-unstyled" data-target-modal="rootword-modal" data-target='#rootword-modal' data-toggle="modal">
+              <div class="hidden rootword-data" data-non-rootword="rootword-data"></div>
+              <span data-non-rootword="rootword"></span>
+            </button>
+          </div>
+        </div>
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div><!-- /.modal -->

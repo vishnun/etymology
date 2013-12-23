@@ -50,6 +50,7 @@ gem 'debugger', group: [:development, :test]
 
 
 gem 'devise'
+gem 'heroku'
 
 group :development, :test do
   gem 'pry'
@@ -59,7 +60,7 @@ group :development, :test do
   gem 'simplecov', :require => false
   gem 'factory_girl_rails'
   gem 'jasmine', '1.3.2'
-  gem 'sqlite3'
+  gem 'pg', '0.15.1'
 end
 
 group :development do
@@ -79,4 +80,5 @@ end
 group :production do
     gem 'pg', '0.15.1'
     gem 'rails_12factor', '0.0.2'
+    gem 'thin'
 end

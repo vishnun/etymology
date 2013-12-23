@@ -32,4 +32,4 @@ config/initializers/secret_token.rb
 # Ignore all logfiles and tempfiles.
 /log/*.log
 .idea/**/*
-
+logfile

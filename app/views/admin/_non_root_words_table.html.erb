@@ -16,17 +16,17 @@
           <td class="hidden-xs">
             <% meanings = '' %>
             <%- non_rootword.meaning.each do |meaning| %>
-                <% meanings = meanings + ', ' +  meaning %>
+                <% meanings = meanings + ', ' + meaning %>
             <% end %>
             <%= meanings.from(1) %>
           </td>
           <td><%= non_rootword.rootword.word %></td>
           <td class="hidden-xs">
-            <% usages = '' %>
-            <%- non_rootword.usages.each do |usage| %>
-                <% usages = usages + ', ' +  usage %>
-            <% end %>
-            <%= usages.from(1) %>
+            <ul>
+              <%- non_rootword.usages.each do |usage| %>
+                  <li><%= usage %></li>
+              <% end %>
+            </ul>
           </td>
         </tr>
     <% end %>

@@ -42,11 +42,11 @@
                 </button>
               </td>
               <td class="hidden-xs">
-                <% usages = '' %>
+                <ul>
                 <%- non_rootword.usages.each do |usage| %>
-                    <% usages = usages + ', ' + usage %>
+                    <li><%= usage %></li>
                 <% end %>
-                <%= usages.from(1) %>
+                </ul>
               </td>
             </tr>
         <% end %>

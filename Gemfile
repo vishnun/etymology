@@ -5,7 +5,6 @@ ruby '2.0.0'
 gem 'rails', '4.0.0'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -60,6 +59,7 @@ group :development, :test do
   gem 'simplecov', :require => false
   gem 'factory_girl_rails'
   gem 'jasmine', '1.3.2'
+  gem 'sqlite3'
 end
 
 group :development do

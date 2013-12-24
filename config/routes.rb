@@ -8,6 +8,8 @@ Etymology::Application.routes.draw do
 
   get '/admin' => 'admin#index'
 
+  post 'interested_user' => 'home#interested_user', as: 'interested_user'
+
   resources :rootwords
   resources :non_rootwords
   # Example of regular route:

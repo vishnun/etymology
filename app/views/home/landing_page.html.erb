@@ -1,0 +1,54 @@
+<div class="container text-center">
+  <div class="space-bar"></div>
+  <div class="page-header">
+    <h1>Welcome to Etymology-Lab
+      <small>An effort to help you improve your vocabulary</small>
+    </h1>
+  </div>
+  <div class="well">
+
+    <div class="row">
+      <div class="col-sm-12">
+        <h2>Hello my friend</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+        <h4 class="alert alert-info">My site isn't quite ready. I'm trying to get the basic version out live
+          soon.</h4>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <p class="lead" >This site shall enable you to improve your vocabulary using the classic etymology way.
+          <br/>Getting the root words andmoving up the ladder. <br/>
+          I myself am a learner and want to help others like
+          me whoare desperately trying to improve their vocabulary.
+        <ul class="text-left col-sm-offset-3">
+          <li>You can also do well in your Competitive Exams.</li>
+          <li>You can now be impressive at your office.</li>
+          <li>You can travel the world without the language being a barrier to effective communication.</li>
+        </ul>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <h4>Would you like to receive a one time Email when the basic version of the site goes live?</h4>
+        <%= form_tag interested_user_path, role: 'form', class: 'form-horizontal', id: 'interested-users' do %>
+
+          <div class="form-group">
+            <label class="col-sm-1 col-sm-offset-3" for="exampleInputEmail2">Email:</label>
+            <div class="col-sm-3">
+              <%= text_field :user, :email, placeholder: 'email', title: 'email', required: true, class: "form-control" %>
+            </div>
+            <div class="col-sm-1">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

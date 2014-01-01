@@ -33,3 +33,7 @@ config/initializers/secret_token.rb
 /log/*.log
 .idea/**/*
 logfile
+
+
+.DS_Store
+db_dumps/*

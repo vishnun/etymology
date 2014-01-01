@@ -24,4 +24,12 @@ describe NonRootwordsController do
             expect(NonRootword.first.rootword).to eq rootword
         end
     end
+
+    context '#index' do
+        it 'should return json of all the non_rootwords' do
+            get :index
+
+            expect(response.body).to eq(NonRootword.all.to_json)
+        end
+    end
 end

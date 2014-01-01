@@ -9,6 +9,7 @@ describe AdminController do
 
     after(:each) do
         sign_out admin
+        Admin.delete_all
     end
 
     context '#index' do

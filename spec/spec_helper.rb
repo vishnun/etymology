@@ -10,6 +10,8 @@ include Devise::TestHelpers
 
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
+I18n.enforce_available_locales = false
+
 RSpec.configure do |config|
     config.mock_with :rspec
 

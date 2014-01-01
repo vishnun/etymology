@@ -5,6 +5,10 @@ class RootwordsController < ApplicationController
     redirect_to(admin_path)
   end
 
+  def index
+      render json: Rootword.all
+  end
+
   private
   def filter_root_word_params params
     params.require('root_word').permit(:word, :meaning, :usages)

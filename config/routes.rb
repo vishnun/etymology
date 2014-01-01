@@ -12,6 +12,8 @@ Etymology::Application.routes.draw do
 
   post 'interested_user' => 'home#interested_user', as: 'interested_user'
 
+  get '/users' => 'admin#users'
+
   resources :rootwords
   resources :non_rootwords
   # Example of regular route:

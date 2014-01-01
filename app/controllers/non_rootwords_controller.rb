@@ -7,6 +7,9 @@ class NonRootwordsController < ApplicationController
         redirect_to(admin_path)
     end
 
+    def index
+        render json: NonRootword.all
+    end
 
     private
     def filter_non_root_word_params params

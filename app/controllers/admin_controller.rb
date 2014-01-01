@@ -6,4 +6,9 @@ class AdminController < ApplicationController
     @non_rootwords = NonRootword.all
   end
 
+  def users
+      @interested_user_emails = Users.all
+      render json: @interested_user_emails
+  end
+
 end

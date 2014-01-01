@@ -10,7 +10,6 @@ class ApplicationController < ActionController::Base
   private
   def store_location
     return if devise_controller?
-    return if admin_signed_in?
     session[:user_return_to] = request.url if request.get?
   end
 

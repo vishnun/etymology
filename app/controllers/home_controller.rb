@@ -1,7 +1,8 @@
 class HomeController < ApplicationController
+
     def index
         @non_rootwords = NonRootword.all
-        render 'index' and return if Rails.env == 'development'
+        render 'index' and return if ['development', 'test'].include?(Rails.env)
         render 'landing_page'
     end
 
@@ -16,6 +17,5 @@ class HomeController < ApplicationController
     def filter_email_param(params)
         params.require('user').permit(:email)
     end
-
 
 end

@@ -31,4 +31,12 @@ describe HomeController do
 
     end
 
+    context "#landing_page" do
+        it 'should render the landing page' do
+            get :landing_page
+
+            expect(response).to render_template('landing_page')
+        end
+    end
+
 end

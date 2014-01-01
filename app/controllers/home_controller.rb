@@ -6,6 +6,9 @@ class HomeController < ApplicationController
         render 'landing_page'
     end
 
+    def landing_page
+    end
+
     def interested_user
         filtered_params = filter_email_param(params)
         Users.create(filtered_params)

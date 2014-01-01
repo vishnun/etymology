@@ -8,6 +8,8 @@ Etymology::Application.routes.draw do
 
   get '/admin' => 'admin#index'
 
+  get '/landing_page' => 'home#landing_page'
+
   post 'interested_user' => 'home#interested_user', as: 'interested_user'
 
   resources :rootwords
